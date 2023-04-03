@@ -1,7 +1,9 @@
+// importing node packages and the generateLogo JavaScript file
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateLogo = require("./lib/generateLogo");
 
+// Checks user input for the text to make sure they enter the correct amount of characters
 const confirmLength = async (input) => {
     if (input.length > 3 || input.length < 1) {
         console.log(" ** Please enter a valid amount of characters! **");
@@ -10,6 +12,7 @@ const confirmLength = async (input) => {
     }
 }
 
+// Array of questions that displays after user starts program
 const questions = inquirer.prompt([
     {
         type: 'input',
@@ -36,6 +39,7 @@ const questions = inquirer.prompt([
     }
 ]) .then(response => writeToFile(response));
 
+// Writes the logo.svg file using the generateLogo function as well as catches any errors throughout the program
 function writeToFile(response) {
     fs.writeFile("logo.svg", generateLogo(response), (err) => err ? console.log(err) : console.log("Generated logo.svg!"));
 }
