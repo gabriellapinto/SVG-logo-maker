@@ -6,7 +6,7 @@ const questions = inquirer.prompt([
     {
         type: 'input',
         name: 'text',
-        message: 'Please enter three characters for your logo:',  
+        message: 'Please enter text for your logo (Up to 3 characters):',  
     },
     {
         type: 'input',
@@ -27,5 +27,5 @@ const questions = inquirer.prompt([
 ]) .then(response => writeToFile(response));
 
 function writeToFile(response) {
-    fs.writeFile("logo.svg", shapes(response), (err) => err ? console.log(err) : console.log("Generated logo.svg!"));
+    fs.writeFile("logo.svg", generateLogo(response), (err) => err ? console.log(err) : console.log("Generated logo.svg!"));
 }
