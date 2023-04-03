@@ -10,7 +10,7 @@ const questions = inquirer.prompt([
     },
     {
         type: 'input',
-        name: 'text-color',
+        name: 'textColor',
         message: 'What color would you like for the text?',  
     },
     {
@@ -21,7 +21,7 @@ const questions = inquirer.prompt([
     },
     {
         type: 'input',
-        name: 'shape-color',
+        name: 'shapeColor',
         message: 'What color would you like for the shape?',  
     }
 ]) .then(response => writeToFile(response));
