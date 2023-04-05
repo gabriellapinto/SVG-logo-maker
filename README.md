@@ -7,5 +7,6 @@ The main objective for this project was to make an applicaton that generates an 
 * Node.js
 * Inquirer 
 * Jest
+* OOP
 
 ## Video Walkthrough of Project
